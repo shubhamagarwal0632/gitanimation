@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+            rel="stylesheet">
+
+        <link href="
+https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
+" rel="stylesheet">
+
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }     
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: #f7f7f7;
+
+        }
+        .page1{
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            /* padding-top: 19vw; */
+            padding: 10vw 1vw;
+            
+        }
+        .page1 h1{
+
+            font-family: futura;
+            font-size: 16vw; 
+            line-height: 14vw;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: -8px;
+        }
+        .video-container{
+            height: 100vh;
+            width: 100%;
+            /* background-color: coral; */
+            object-fit: cover;
+            margin-top: 1vw;
+            
+        }
+        .video-container video{
+            width: 100%;
+        }
+        .play{
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            /* opacity: 0;
+            scale: 0; */
+            position: fixed;
+            padding: 2vw 2vw;
+            z-index: 1;
+            transform: translate(-50%,-50%) scale(0);
+        }
+        .nav{
+            height: 5vw;
+            width: 100%;
+            /* background-color: gray; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5vw;
+        }
+        .nav-pt2{
+            display: flex;
+            gap: 50px;
+            justify-content: space-between;
+        }
+        .nav-pt2 h1{
+            font-size: 1vw;
+            text-transform:uppercase;
+            font-weight: 200;
+            color: black;
+            font-family: futura;
+        }.nav h2{
+            padding-right: 15vw;
+            height: 5vw;
+            width: 5vw;
+            font-weight: 900;
+            font-size: 2.5vw;
+            text-transform: uppercase;
+        }
+
+        /* page2 */
+        .page2{
+            min-height: 100vh;
+            width: 100%;
+            /* background-color: darkblue; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4vw 1vw;
+            position: relative;
+            /* padding: 4vw; */
+        }
+        .page2 .elem{
+            height: 90vh;
+            width: 31%;
+            /* background-color: darkcyan; */
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+            .dets{
+                width: 80%;
+                height: 50px;
+                border-radius: 40px;
+                background-color: brown;
+                position: absolute;
+                z-index: 25;
+            }
+            
+        .page2 .elem img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            scale: 1.1;
+        }
+
+        @media (max-width:600px) {
+            
+            .nav-pt2 h1{
+                display: none;
+        }
+            .nav-pt2 i {
+                margin-top: 15vw;
+                height: 5vw;
+            }
+            .nav h2{
+                font-size: 7vw;
+                line-height: 25px;
+                padding-top: 20px;
+                font-weight: bold;
+            }
+            .page1 {
+                min-height: 50vh;
+                padding-top: 20vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+                /* padding: 50vw 4vw; */
+            }
+            .page1 h1{
+                font-size: 15vw; 
+                
+                letter-spacing: -5px;
+
+            }
+
+            .video-container{
+                height: 25vh;
+
+            }
+
+            .play{
+            font-size: 7vw;
+            opacity: 1;
+            scale: 1;
+            position: absolute;
+            padding: 9vw 7vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        
+        .page2{
+            min-height: 100vh;
+            width: 100%;
+            /* background-color: darkblue; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .page2 .elem{
+            height: 80vh;
+            width: 100%;
+            /* background-color: darkcyan; */
+            overflow: hidden;
+            
+            margin-bottom: 2vw;
+        }
+
+        .page2 .elem img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            padding: 8vw 7vw;
+            scale: 1.1;
+        }
+                
+    .page3{
+        min-height: 120vh;
+        width: 100%;
+        /* background-color: black; */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        
+        flex-direction: column;
+        position: relative;
+    }
+    .page3 .child{
+        height: 54vh;
+        width: 38vw;
+        /* background-color: cadetblue; */
+        padding: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .page3 .child img{
+        height: 100%;
+        object-fit: cover;
+    }
+        }
+
+        
+    .page3{
+        min-height: 120vh;
+        width: 100%;
+        /* background-color: black; */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .page3 .child{
+        height: 54vh;
+        width: 38vw;
+        /* background-color: cadetblue; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .page3 .child img{
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .boxround{
+        height: 250px;
+        width: 250px;
+        background-color: burlywood;
+        border-radius: 50%;
+        /* opacity: 0; */
+        position: fixed;
+        transform: translate(-50%,-50%) scale(0);
+
+    }
+    </style>
+    </head>
+    <body>
+        <div class="boxround"></div>
+
+        <div class="play">Play</div>
+        <div class="main">
+            <div class="nav">
+                <div class>
+
+                    <h2>two good co.</h2>
+                </div>
+                <div class="nav-pt2">
+                    <h1>shop</h1>
+                    <h1>catering<i class="ri-arrow-right-up-line"></i></h1>
+                    <h1>donate</h1>
+                    <i class="ri-align-justify"></i>
+                    <i class="ri-shopping-cart-2-line"></i>
+                </div>
+            </div>
+            <div class="page1">
+                <h1>change</h1>
+                <h1>the course</h1>
+
+                <div class="video-container">
+                    <video autoplay loop muted src="/video.mp4"></video>
+                </div>
+            </div>
+            <div class="page2">
+                <div id="elem2" class="elem">
+                    <img data-scroll data-scroll-speed="1"
+                        src="https://cdn.sanity.io/images/w8f1ak3c/production/ee1c2e8894a4c47c4f4ce71b8973589f8a5045b2-902x1500.png/Rectangle%203.png?rect=1,0,900,1500&w=420&h=700&fit=min&auto=format"
+                        alt>
+                    <div data-scroll data-scroll-speed="2" class="dets"></div>
+                </div>
+                <div id="elem1" class="elem">
+                    <img data-scroll data-scroll-speed="1"
+                        src="https://cdn.sanity.io/images/w8f1ak3c/production/bb84b7106e978c37f5aa92c8d5781751b2e9d9f2-900x1500.png/Rectangle%202.png?w=420&h=700&auto=format"
+                        alt>
+                    <div data-scroll data-scroll-speed="2" class="dets"></div>
+                </div>
+                <div id="elem3" class="elem">
+                    <img data-scroll data-scroll-speed="1"
+                        src="https://cdn.sanity.io/images/w8f1ak3c/production/d3151106849ff2494d66916cf554c68a0603444d-902x1500.png/Rectangle%20220.png?rect=1,0,900,1500&w=420&h=700&fit=min&auto=format"
+                        alt>
+                    <div data-scroll data-scroll-speed="2" class="dets"></div>
+                </div>
+            </div>
+            <div class="page3">
+                <div class="child" id="child1">
+                    <img
+                        src="https://cdn.sanity.io/images/w8f1ak3c/production/d6a2a4be8e3063d64648773f57f5f447609a93ab-5000x5000.png/Love-Care-Pack-Expanded-Two-Good-Co.png?w=1024&h=1024&auto=format"
+                        alt>
+                </div>
+                <div class="child" id="child2">
+                    <img
+                        src="https://cdn.sanity.io/images/w8f1ak3c/production/7a2007de38624a0b2935416bf51a4584889aa232-5000x5000.png/Website%20Products%20(12).png?w=1024&h=1024&auto=format"
+                        alt>
+                </div>
+                <div class="child" id="child3">
+                    <img
+                        src="https://cdn.sanity.io/images/w8f1ak3c/production/99866b12faf44f7490e6037dc197947334ce0a72-1408x1408.png/Nourish%20&%20Soothe%20Hand%20Lotion%20Two%20Good%20Co.png?w=1024&h=1024&auto=format"
+                        alt>
+                </div>
+                <div class="child" id="child4">
+                    <img
+                        src="https://cdn.sanity.io/images/w8f1ak3c/production/02240d01db2e8bdc5c630e9832ff7e0c7614f733-1876x1876.png/Cookbook-Two-Recipes-For-Resilience-Two-Good-Co.png?w=1024&h=1024&auto=format"
+                        alt>
+                </div>
+            </div>
+        </div>
+        <script src="
+                https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js
+                "></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+            integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>    
+
+        const locomotivescrolltrigger = ()=>{
+            
+            gsap.registerPlugin(ScrollTrigger);
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector(".main"),
+  smooth: true
+});
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(".main", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+  pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+
+            gsap.to('.nav',{
+                y:-100,
+                duration:0.5,
+                delay:1,
+                scrollTrigger:{
+                    trigger:".nav",
+                    scroller:'.main',
+                    // markers:true,
+                    start:'top 0',
+                    end:"top -5%",
+                    scrub:2
+                }
+            })
+
+        }
+        
+        locomotivescrolltrigger();
+        // let veido = document.querySelector('.video-container');
+        // let playbtn = document.querySelector('.play')
+        // veido.addEventListener('mouseenter' , function(){
+        //     gsap.to(playbtn,{
+        //         opacity:1,
+        //         scale:1
+        //     })
+        // })
+        // veido.addEventListener('mouseleave' , function(){
+        //     gsap.to(playbtn,{
+        //         opacity:0,
+        //         scale:0
+        //     })
+        // })
+        // veido.addEventListener('mousemove' , function(details){
+        //     gsap.to(playbtn,{
+        //         left:details.x,
+        //         top:details.y
+        //     })
+        // })
+        
+
+        document.addEventListener('mousemove',function(hello){
+            gsap.to('.play',{
+                left:hello.x,
+                top:hello.y
+            })
+        })
+
+        document.querySelector('.video-container').addEventListener('mouseenter',function(){
+            gsap.to('.play',{
+                
+        transform: 'translate(-50%,-50%) scale(1)'
+            })
+        })
+
+        document.querySelector('.video-container').addEventListener('mouseleave',function(){
+            gsap.to('.play',{
+                
+        transform: 'translate(-50%,-50%) scale(0)'
+            })
+        })
+        
+        gsap.from('.page1 h1',{
+            y:100,
+            delay:0.5,
+            opacity:0,
+            duration:0.5,
+            stagger:0.2
+        })
+
+        gsap.from('.video-container',{
+           y:200,
+            delay:1,
+            opacity:0,
+            duration:0.9,
+            stagger:0.2
+        })
+
+        // let page3 = document.querySelector('.page3');
+        // let boxround1 = document.querySelector('.boxround');
+        // page3.addEventListener('mouseenter',function(){
+        //     gsap.to(boxround1,{
+        //         scale:1,
+        //         opacity:1,
+                
+        // transform: 'translate(-50%,-50%)'
+        //     })
+        // })
+        
+        // page3.addEventListener('mouseleave',function(){
+        //     gsap.to(boxround1,{
+        //         scale:0,
+        //         opacity:0
+        //     })
+        // })
+
+        // page3.addEventListener('mousemove',function(detail){
+        //     gsap.to(boxround1,{
+        //         x:detail.x,
+        //         y:detail.y
+        //     })
+        // })
+
+        document.addEventListener('mousemove',function(deta){
+            gsap.to('.boxround',{
+                left:deta.x,
+                top:deta.y
+            })
+        })
+
+        document.querySelector('.page3').addEventListener('mouseenter',function(){
+            gsap.to('.boxround',{
+                
+        transform: 'translate(-50%,-50%) scale(1)'
+            })
+        })
+        document.querySelector('.page3').addEventListener('mouseleave',function(){
+            gsap.to('.boxround',{
+                
+        transform: 'translate(-50%,-50%) scale(0)'
+            })
+        })
+    </script>
+    </body>
+</html>
